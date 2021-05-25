@@ -39,14 +39,35 @@ public class Fraccion {
 
 		return new Fraccion(num,den);
 	}
-	/*
+
 	public static Fraccion suma(Fraccion sumando1, Fraccion sumando2) {
+		int denomC = sumando1.getDenominador() * sumando2.getDenominador();
+
+		int n1 = sumando1.getNumerador() * sumando2.getDenominador();
+		int n2 = sumando2.getNumerador() * sumando1.getDenominador();
+
+		return new Fraccion(n1 + n2, denomC);
+
 	}
+
 	public static Fraccion multiplicacion(Fraccion sumando1, Fraccion sumando2) {
+
+		int n1 = sumando1.getNumerador() * sumando2.getNumerador();
+		int n2 = sumando1.getDenominador() * sumando2.getDenominador();
+
+
+		return new Fraccion(n1,n2);
+
+
 	}
 	public static Fraccion division(Fraccion sumando1, Fraccion sumando2) {
+		int n1 = sumando1.getNumerador() * sumando2.getDenominador();
+		int n2 = sumando1.getDenominador() * sumando2.getNumerador();
+
+
+		return new Fraccion(n1,n2);
 	}
-*/
+
 	public int getNumerador() {
 		return numerador;
 	}
@@ -66,7 +87,8 @@ public class Fraccion {
 
 	@Override
 	public String toString() {
-		return numerador + "/" + denominador;
+
+		return numerador + "/ " + denominador;
 	}
 
 }
