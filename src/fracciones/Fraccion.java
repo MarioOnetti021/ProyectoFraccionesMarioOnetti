@@ -16,10 +16,30 @@ public class Fraccion {
  * 	Añadir las siguientes operaciones a Fracción
  * 
  * 
- * 
+ */
 	public static Fraccion simplifica(Fraccion entrada) {
+
+		//Solo simplifica fracciones par
+
+		int num = entrada.numerador;
+		int den = entrada.denominador;
+		int divid =0 ;
+
+		if (num % 2 == 0){
+			divid = 2;
+		}
+		else if (num % 3 == 0){
+			divid = 3;
+		}
+
+		while (num / divid >5 || den / divid>5){
+			num = num / divid;
+			den = den / divid;
+		}
+
+		return new Fraccion(num,den);
 	}
-	
+	/*
 	public static Fraccion suma(Fraccion sumando1, Fraccion sumando2) {
 	}
 	public static Fraccion multiplicacion(Fraccion sumando1, Fraccion sumando2) {
@@ -46,9 +66,7 @@ public class Fraccion {
 
 	@Override
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append(numerador).append(" / ").append(denominador);
-		return sb.toString();
+		return numerador + "/" + denominador;
 	}
 
 }
